@@ -85,7 +85,7 @@ describe("PlanDataSchema", () => {
 
   it("rejects a plan without weeks or with a malformed workout date", () => {
     expect(PlanDataSchema.safeParse({ ...valid, weeks: [] }).success).toBe(false);
-    const bad = structuredClone(valid);
+    const bad = JSON.parse(JSON.stringify(valid)) as typeof valid;
     bad.weeks[0].workouts[0].date = "07/09/2026";
     expect(PlanDataSchema.safeParse(bad).success).toBe(false);
   });

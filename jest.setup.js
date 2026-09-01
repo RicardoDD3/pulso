@@ -6,3 +6,6 @@ if (typeof globalThis.TextEncoder === "undefined") {
   globalThis.TextEncoder = TextEncoder;
   globalThis.TextDecoder = TextDecoder;
 }
+if (typeof globalThis.structuredClone === "undefined") {
+  globalThis.structuredClone = (value) => JSON.parse(JSON.stringify(value));
+}
