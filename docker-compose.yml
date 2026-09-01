@@ -1,0 +1,138 @@
+# Pulso — full self-hosted stack (spec doc 01).
+#
+#   cp .env.example .env   # fill in AUTH_SECRET at minimum
+#   docker compose up -d
+#   docker compose --profile demo up -d   # + demo user with synthetic data
+#
+# Services: pulso-web, pulso-worker, postgres, redis, and the Open Wearables
+# stack (ow-api, ow-worker, ow-portal) consumed as a black box via REST.
+# NOTE: pin OW images by digest before releasing (spec doc 03).
+
+name: pulso
+
+services:
+  pulso-web:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    env_file: .env
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgres://pulso:pulso@postgres:5432/pulso}
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379}
+    ports:
+      - "${PULSO_PORT:-3000}:3000"
+    volumes:
+      - uploads:/data/uploads
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:3000/api/system/healthz').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+
+  pulso-worker:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: worker
+    env_file: .env
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgres://pulso:pulso@postgres:5432/pulso}
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379}
+    volumes:
+      - uploads:/data/uploads
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: pulso
+      POSTGRES_PASSWORD: pulso
+      POSTGRES_DB: pulso
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./docker/postgres-init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pulso"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    volumes:
+      - redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  # ---- Open Wearables stack (black box; Pulso talks to it over REST only) ----
+  ow-api:
+    image: ghcr.io/the-momentum/open-wearables-api:latest
+    environment:
+      DATABASE_URL: postgres://pulso:pulso@postgres:5432/open_wearables
+      REDIS_URL: redis://redis:6379
+    ports:
+      - "${OW_API_PORT:-8000}:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  ow-worker:
+    image: ghcr.io/the-momentum/open-wearables-worker:latest
+    environment:
+      DATABASE_URL: postgres://pulso:pulso@postgres:5432/open_wearables
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  ow-portal:
+    image: ghcr.io/the-momentum/open-wearables-portal:latest
+    ports:
+      - "${OW_PORTAL_PORT:-5173}:80"
+    depends_on:
+      - ow-api
+    restart: unless-stopped
+
+  demo-seed:
+    profiles: ["demo"]
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: worker
+    env_file: .env
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgres://pulso:pulso@postgres:5432/pulso}
+      SEED_DEMO: "true"
+    command: ["npx", "tsx", "scripts/seed-demo.ts"]
+    depends_on:
+      pulso-web:
+        condition: service_healthy
+    restart: "no"
+
+volumes:
+  pgdata:
+  redisdata:
+  uploads:

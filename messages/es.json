@@ -1,0 +1,86 @@
+{
+  "app": {
+    "name": "Pulso",
+    "tagline": "Tus datos de salud y entrenamiento, en tu servidor."
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "training": "Entrenamiento",
+    "labs": "Laboratorios",
+    "coach": "Coach",
+    "exercises": "Ejercicios",
+    "settings": "Ajustes",
+    "signOut": "Cerrar sesión"
+  },
+  "auth": {
+    "signIn": "Iniciar sesión",
+    "signUp": "Crear cuenta",
+    "email": "Correo",
+    "password": "Contraseña",
+    "name": "Nombre",
+    "noAccount": "¿Aún no tienes cuenta?",
+    "haveAccount": "¿Ya tienes cuenta?",
+    "signupsDisabled": "El registro está deshabilitado en esta instancia.",
+    "error": "Algo salió mal. Revisa tus credenciales e intenta de nuevo."
+  },
+  "exercises": {
+    "title": "Ejercicios",
+    "addExercise": "Agregar ejercicio",
+    "weeklyGoal": "Meta semanal",
+    "reps": "reps",
+    "sets": "sets",
+    "logReps": "Registrar reps",
+    "addSet": "Agregar set",
+    "removeLastSet": "Quitar último set",
+    "weight": "Peso (kg)",
+    "hidden": "Ocultos",
+    "show": "Mostrar",
+    "hide": "Ocultar",
+    "today": "Hoy",
+    "emptyState": "No hay ejercicios activos. Agrega uno para empezar a registrar."
+  },
+  "settings": {
+    "title": "Ajustes",
+    "profile": "Perfil",
+    "displayName": "Nombre para mostrar",
+    "birthDate": "Fecha de nacimiento",
+    "sex": "Sexo",
+    "maxHr": "Frecuencia cardiaca máxima",
+    "maxHrHint": "Déjalo vacío para estimar 220 − edad.",
+    "timezone": "Zona horaria",
+    "locale": "Idioma",
+    "unitSystem": "Unidades",
+    "metric": "Métrico",
+    "imperial": "Imperial",
+    "save": "Guardar",
+    "saved": "Guardado."
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "today": "Hoy",
+    "trends": "Tendencias",
+    "comingSoon": "Conecta un wearable en Ajustes para ver tus datos aquí.",
+    "kpi": {
+      "steps": "Pasos",
+      "sleep": "Sueño",
+      "restingHr": "FC en reposo",
+      "stress": "Estrés",
+      "bodyBattery": "Body Battery",
+      "calories": "Calorías",
+      "spo2": "SpO2",
+      "respiration": "Respiración",
+      "hrv": "HRV",
+      "hydration": "Hidratación",
+      "floors": "Pisos",
+      "intensityMinutes": "Minutos de intensidad"
+    }
+  },
+  "common": {
+    "loading": "Cargando…",
+    "error": "Algo salió mal.",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "delete": "Borrar",
+    "featureDisabled": "Esta función no está habilitada en esta instancia."
+  }
+}

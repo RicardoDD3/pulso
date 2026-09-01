@@ -1,0 +1,86 @@
+{
+  "app": {
+    "name": "Pulso",
+    "tagline": "Your health and training data, on your server."
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "training": "Training",
+    "labs": "Labs",
+    "coach": "Coach",
+    "exercises": "Exercises",
+    "settings": "Settings",
+    "signOut": "Sign out"
+  },
+  "auth": {
+    "signIn": "Sign in",
+    "signUp": "Create account",
+    "email": "Email",
+    "password": "Password",
+    "name": "Name",
+    "noAccount": "No account yet?",
+    "haveAccount": "Already have an account?",
+    "signupsDisabled": "Sign-ups are disabled on this instance.",
+    "error": "Something went wrong. Check your credentials and try again."
+  },
+  "exercises": {
+    "title": "Exercises",
+    "addExercise": "Add exercise",
+    "weeklyGoal": "Weekly goal",
+    "reps": "reps",
+    "sets": "sets",
+    "logReps": "Log reps",
+    "addSet": "Add set",
+    "removeLastSet": "Remove last set",
+    "weight": "Weight (kg)",
+    "hidden": "Hidden",
+    "show": "Show",
+    "hide": "Hide",
+    "today": "Today",
+    "emptyState": "No active exercises. Add one to start logging."
+  },
+  "settings": {
+    "title": "Settings",
+    "profile": "Profile",
+    "displayName": "Display name",
+    "birthDate": "Birth date",
+    "sex": "Sex",
+    "maxHr": "Max heart rate",
+    "maxHrHint": "Leave empty to estimate as 220 − age.",
+    "timezone": "Timezone",
+    "locale": "Language",
+    "unitSystem": "Units",
+    "metric": "Metric",
+    "imperial": "Imperial",
+    "save": "Save",
+    "saved": "Saved."
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "today": "Today",
+    "trends": "Trends",
+    "comingSoon": "Connect a wearable in Settings to see your data here.",
+    "kpi": {
+      "steps": "Steps",
+      "sleep": "Sleep",
+      "restingHr": "Resting HR",
+      "stress": "Stress",
+      "bodyBattery": "Body Battery",
+      "calories": "Calories",
+      "spo2": "SpO2",
+      "respiration": "Respiration",
+      "hrv": "HRV",
+      "hydration": "Hydration",
+      "floors": "Floors",
+      "intensityMinutes": "Intensity minutes"
+    }
+  },
+  "common": {
+    "loading": "Loading…",
+    "error": "Something went wrong.",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "featureDisabled": "This feature is not enabled on this instance."
+  }
+}
