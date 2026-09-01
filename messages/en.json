@@ -161,5 +161,13 @@
     "weather": "Weather",
     "feelsLike": "feels like",
     "uploadFitHint": "Upload the .fit file of this activity to see laps, route, dynamics and real training effect"
+  },
+  "usage": {
+    "title": "AI usage (last 30 days)",
+    "todayQuota": "Today's token quota",
+    "monthEstimate": "30-day estimated cost",
+    "model": "Model",
+    "feature": "Feature",
+    "calls": "Calls"
   }
 }

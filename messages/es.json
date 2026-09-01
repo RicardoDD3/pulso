@@ -161,5 +161,13 @@
     "weather": "Clima",
     "feelsLike": "sensación",
     "uploadFitHint": "Sube el .fit de esta actividad para ver vueltas, ruta, dinámica y training effect real"
+  },
+  "usage": {
+    "title": "Uso de IA (últimos 30 días)",
+    "todayQuota": "Cuota de tokens de hoy",
+    "monthEstimate": "Costo estimado 30 días",
+    "model": "Modelo",
+    "feature": "Función",
+    "calls": "Llamadas"
   }
 }
