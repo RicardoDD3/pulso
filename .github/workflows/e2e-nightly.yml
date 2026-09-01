@@ -1,0 +1,46 @@
+name: E2E nightly
+
+on:
+  schedule:
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: pulso
+          POSTGRES_PASSWORD: pulso
+          POSTGRES_DB: pulso
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U pulso" --health-interval 10s
+          --health-timeout 5s --health-retries 10
+      redis:
+        image: redis:7-alpine
+        ports: ["6379:6379"]
+    env:
+      DATABASE_URL: postgres://pulso:pulso@localhost:5432/pulso
+      REDIS_URL: redis://localhost:6379
+      APP_URL: http://localhost:3000
+      AUTH_SECRET: e2e-only-secret-not-production-1234
+      LLM_MOCK: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24, cache: npm }
+      - run: npm ci
+      - run: npx drizzle-kit migrate
+      - run: npx tsx scripts/seed-demo.ts
+      - run: npx playwright install --with-deps chromium
+      - run: npm run build
+      - run: |
+          npx next start &
+          for i in $(seq 1 60); do
+            curl -sf http://localhost:3000/api/system/healthz && break
+            sleep 2
+          done
+      - run: npx playwright test

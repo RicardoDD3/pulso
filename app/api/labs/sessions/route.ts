@@ -5,6 +5,6 @@ import * as labsRepo from "@/lib/db/repos/labs";
 export const GET = withApi(async (req) => {
   const viewAs = new URL(req.url).searchParams.get("viewAs");
   const viewer = await resolveViewer(viewAs);
-  const sessions = await labsRepo.listSessions(viewer);
+  const sessions = await labsRepo.listSessionsWithCounts(viewer);
   return ok({ sessions });
 });

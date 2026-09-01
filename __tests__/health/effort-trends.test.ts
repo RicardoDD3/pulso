@@ -74,6 +74,14 @@ describe("pairWeatherPerformance", () => {
     expect(out[0].hr).toBe(140);
     expect(out[0].humidity).toBe(77);
   });
+  it("prefers canonical temp_c (°C) over legacy temp (°F)", () => {
+    const out = pairWeatherPerformance(
+      [{ date: "2026-07-14", activity_id: 1, distance_meters: 10000, duration_seconds: 3000 }],
+      [{ activity_id: 1, temp_c: 21.5, temp: 57 }]
+    );
+    expect(out[0].tempC).toBeCloseTo(21.5);
+  });
+
   it("coerces string activity_id (PostgREST) on both sides", () => {
     const out = pairWeatherPerformance(
       [{ date: "2026-07-14", activity_id: "111", distance_meters: 10000, duration_seconds: 3000 }],

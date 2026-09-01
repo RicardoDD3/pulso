@@ -22,6 +22,11 @@ const MESSAGES: Record<string, string> = {
   catalog_no_delete: "The exercise catalog has no hard delete — hide it instead.",
   internal: "Something went wrong.",
   fit_mismatch: "The FIT file does not match this workout.",
+  plan_format_unsupported: "Plan format not supported: missing weeks.",
+  invalid_plan_patch: "The model returned an invalid plan modification.",
+  no_versions: "No changes to undo.",
+  llm_failed: "The AI provider failed. Try again or switch models.",
+  sync_locked: "A sync is already running for this plan.",
 };
 
 export function apiError(status: number, code: keyof typeof MESSAGES | string) {

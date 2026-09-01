@@ -87,6 +87,9 @@ export function buildGapSeries(activities: TrendActivity[]): GapPoint[] {
 
 export interface WeatherRow {
   activity_id?: number | string | null;
+  /** canonical storage (°C) — preferred (spec doc 03) */
+  temp_c?: number | string | null;
+  /** legacy Garmin °F — only for pre-migration rows */
   temp?: number | string | null;
   relative_humidity?: number | string | null;
 }
@@ -115,7 +118,8 @@ export function pairWeatherPerformance(
     if (id === null) continue;
     const w = byId.get(id);
     if (!w) continue;
-    const tempC = fToC(w.temp);
+    // Canonical °C wins; legacy °F rows convert on the way out (doc 03).
+    const tempC = toNum(w.temp_c) ?? fToC(w.temp);
     const pace = paceMinKmNum(r.distance_meters, r.duration_seconds);
     if (tempC === null || pace === null || !r.date) continue;
     out.push({
