@@ -24,6 +24,17 @@ test.describe("demo user flow", () => {
     await expect(page.getByText(/demo lab/i).first()).toBeVisible();
   });
 
+  test("training shows the active plan with weekly view", async ({ page }) => {
+    await page.goto("/sign-in");
+    await page.getByLabel(/email|correo/i).fill(DEMO_EMAIL);
+    await page.getByLabel(/password|contraseña/i).fill(DEMO_PASSWORD);
+    await page.getByRole("button", { name: /sign in|iniciar/i }).click();
+    await page.waitForURL("**/dashboard");
+
+    await page.getByRole("link", { name: /training|entrenamiento/i }).click();
+    await expect(page.getByText(/marathon test/i).first()).toBeVisible({ timeout: 15_000 });
+  });
+
   test("registration creates an isolated account", async ({ page }) => {
     const email = `e2e-${Date.now()}@test.dev`;
     await page.goto("/sign-up");

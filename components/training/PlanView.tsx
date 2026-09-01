@@ -128,7 +128,8 @@ export function PlanView({ planId, readOnly = false, chatEnabled = false, onPlan
 
   const { plan } = detail;
   const totalWeeks = weekNumbers.length;
-  const activeWeek = week ?? weekNumbers[0] ?? 1;
+  // Until the user navigates, default to the week containing today.
+  const activeWeek = week ?? (totalWeeks > 0 ? currentWeekNumber(weekNumbers, byWeek) : 1);
   const weekIdx = weekNumbers.indexOf(activeWeek);
   const daysToRace = plan.goalDate
     ? Math.ceil((Date.parse(plan.goalDate) - Date.parse(localISODate())) / 86_400_000)
