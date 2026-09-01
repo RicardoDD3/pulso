@@ -94,5 +94,38 @@
     "recentSyncs": "Recent syncs",
     "staleWarning": "{provider} shows an active connection but no data for over 48h. Try \"Sync now\" or reconnect.",
     "confirmDeleteData": "This deletes ALL data from this provider (here and in Open Wearables). Continue?"
+  },
+  "coach": {
+    "title": "Coach",
+    "newChat": "New chat",
+    "untitled": "Untitled",
+    "send": "Send",
+    "placeholder": "Ask about your training, sleep, labs…",
+    "emptyState": "Ask anything — the coach sees your full health context.",
+    "disabledHint": "Configure an LLM provider key (OPENAI_API_KEY, ANTHROPIC_API_KEY, DEEPSEEK_API_KEY, GOOGLE_GENERATIVE_AI_API_KEY or a local OLLAMA_BASE_URL) to enable the AI coach. Tracking works fully without it."
+  },
+  "labs": {
+    "title": "Labs",
+    "uploadPdf": "Upload lab PDF",
+    "results": "results",
+    "flags": "flagged",
+    "retry": "Retry",
+    "onlyFlagged": "Only flagged",
+    "selectSession": "Select a session to see its results.",
+    "emptyState": "No lab sessions yet. Upload a PDF to get started.",
+    "confirmDelete": "Delete this session, its results and the stored PDF?",
+    "disabledHint": "Configure VISION_MODEL (a vision-capable model) plus its provider key to extract PDFs.",
+    "aiDisclaimer": "Extraction is done by an AI model and can contain errors — always verify against your PDF. This is not medical advice."
+  },
+  "trends": {
+    "steps": "Steps",
+    "sleep": "Sleep (h)",
+    "sleepScore": "Sleep score",
+    "restingHr": "Resting HR",
+    "stress": "Stress",
+    "hrv": "HRV (ms)",
+    "weight": "Weight (kg)",
+    "bodyBattery": "Body Battery",
+    "effortHint": "Upload FIT files on your activities to see training effect, load and GAP trends."
   }
 }

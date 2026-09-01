@@ -540,7 +540,15 @@ export async function buildHealthContext(
   // Presupuesto de contexto: recorta daily-log y detalle si el total excede.
   const { blocks } = trimContextToBudget(
     [
-      { name: "summary", text: formatGarminSummary(legacySummaries, legacySleep, weightHistory, legacyActivities) },
+      {
+        name: "summary",
+        text: formatGarminSummary(
+          legacySummaries,
+          legacySleep,
+          weightHistory,
+          legacyActivities as Array<{ date: string; vo2max_value?: number | null }>,
+        ),
+      },
       { name: "steps", text: formatStepsBlock(legacySummaries, stepsGoal, today) },
       { name: "composition", text: formatBodyComposition(legacyBodyComp) },
       { name: DAILY_LOG_BLOCK, text: formatDailyLog(legacySummaries, legacySleep, tz) },

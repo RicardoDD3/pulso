@@ -1,17 +1,19 @@
 import { useTranslations } from "next-intl";
+import { getFeatures } from "@/lib/system/features";
+import { CoachView } from "@/components/coach/CoachView";
 
 export default function CoachPage() {
-  // Placeholder until Fase 4 (LLM layer + coach chat).
-  return <CoachEmpty />;
+  const features = getFeatures();
+  if (!features.chatEnabled) return <CoachDisabled />;
+  return <CoachView />;
 }
 
-function CoachEmpty() {
-  const t = useTranslations("nav");
-  const tCommon = useTranslations("common");
+function CoachDisabled() {
+  const t = useTranslations("coach");
   return (
     <div className="space-y-2">
-      <h1 className="text-2xl font-bold">{t("coach")}</h1>
-      <p className="text-sm text-zinc-400">{tCommon("featureDisabled")}</p>
+      <h1 className="text-2xl font-bold">{t("title")}</h1>
+      <p className="max-w-md text-sm text-zinc-400">{t("disabledHint")}</p>
     </div>
   );
 }

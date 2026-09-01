@@ -94,5 +94,38 @@
     "recentSyncs": "Syncs recientes",
     "staleWarning": "{provider} muestra conexión activa pero sin datos por más de 48h. Prueba \"Sincronizar ahora\" o reconecta.",
     "confirmDeleteData": "Esto borra TODOS los datos de este proveedor (aquí y en Open Wearables). ¿Continuar?"
+  },
+  "coach": {
+    "title": "Coach",
+    "newChat": "Nuevo chat",
+    "untitled": "Sin título",
+    "send": "Enviar",
+    "placeholder": "Pregunta sobre tu entrenamiento, sueño, laboratorios…",
+    "emptyState": "Pregunta lo que sea — el coach ve tu contexto de salud completo.",
+    "disabledHint": "Configura una key de LLM (OPENAI_API_KEY, ANTHROPIC_API_KEY, DEEPSEEK_API_KEY, GOOGLE_GENERATIVE_AI_API_KEY o un OLLAMA_BASE_URL local) para habilitar el coach IA. El tracking funciona completo sin ella."
+  },
+  "labs": {
+    "title": "Laboratorios",
+    "uploadPdf": "Subir PDF de laboratorio",
+    "results": "resultados",
+    "flags": "alterados",
+    "retry": "Reintentar",
+    "onlyFlagged": "Solo alterados",
+    "selectSession": "Selecciona una sesión para ver sus resultados.",
+    "emptyState": "Aún no hay sesiones. Sube un PDF para empezar.",
+    "confirmDelete": "¿Borrar esta sesión, sus resultados y el PDF guardado?",
+    "disabledHint": "Configura VISION_MODEL (un modelo con visión) y la key de su proveedor para extraer PDFs.",
+    "aiDisclaimer": "La extracción la hace un modelo de IA y puede contener errores — verifica siempre contra tu PDF. Esto no es consejo médico."
+  },
+  "trends": {
+    "steps": "Pasos",
+    "sleep": "Sueño (h)",
+    "sleepScore": "Score de sueño",
+    "restingHr": "FC en reposo",
+    "stress": "Estrés",
+    "hrv": "HRV (ms)",
+    "weight": "Peso (kg)",
+    "bodyBattery": "Body Battery",
+    "effortHint": "Sube archivos FIT en tus actividades para ver tendencias de training effect, carga y GAP."
   }
 }
