@@ -82,5 +82,17 @@
     "confirm": "Confirm",
     "delete": "Delete",
     "featureDisabled": "This feature is not enabled on this instance."
+  },
+  "wearables": {
+    "title": "Wearables",
+    "notConfigured": "Open Wearables is not configured on this instance (OW_API_URL / OW_API_KEY).",
+    "connect": "Connect",
+    "disconnect": "Disconnect",
+    "deleteData": "Delete data",
+    "syncNow": "Sync now",
+    "lastSync": "Last sync",
+    "recentSyncs": "Recent syncs",
+    "staleWarning": "{provider} shows an active connection but no data for over 48h. Try \"Sync now\" or reconnect.",
+    "confirmDeleteData": "This deletes ALL data from this provider (here and in Open Wearables). Continue?"
   }
 }

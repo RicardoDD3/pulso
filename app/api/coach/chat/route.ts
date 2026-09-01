@@ -50,11 +50,7 @@ export const POST = withApi(async (req) => {
     return apiError(429, "quota_exceeded");
   }
 
-  const context = await buildHealthContext(viewer, kind, {
-    timezone: profile.timezone,
-    locale: profile.locale,
-    planId: conversation.planId,
-  });
+  const context = await buildHealthContext(viewer, kind);
 
   const messages: ModelMessage[] = [
     ...(history ?? []).map(
@@ -74,7 +70,7 @@ export const POST = withApi(async (req) => {
             feature: kind,
             viewer,
             model: conversation.model ?? undefined,
-            system: context.system,
+            system: context.prompt,
             messages,
             abortSignal: req.signal,
           },

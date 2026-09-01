@@ -82,5 +82,17 @@
     "confirm": "Confirmar",
     "delete": "Borrar",
     "featureDisabled": "Esta función no está habilitada en esta instancia."
+  },
+  "wearables": {
+    "title": "Wearables",
+    "notConfigured": "Open Wearables no está configurado en esta instancia (OW_API_URL / OW_API_KEY).",
+    "connect": "Conectar",
+    "disconnect": "Desconectar",
+    "deleteData": "Borrar datos",
+    "syncNow": "Sincronizar ahora",
+    "lastSync": "Última sync",
+    "recentSyncs": "Syncs recientes",
+    "staleWarning": "{provider} muestra conexión activa pero sin datos por más de 48h. Prueba \"Sincronizar ahora\" o reconecta.",
+    "confirmDeleteData": "Esto borra TODOS los datos de este proveedor (aquí y en Open Wearables). ¿Continuar?"
   }
 }
