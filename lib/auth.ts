@@ -26,12 +26,13 @@ export const auth = betterAuth({
   secret: getEnv().AUTH_SECRET,
   database: drizzleAdapter(getDb(), {
     provider: "pg",
+    usePlural: true,
     schema: {
-      user: schema.users,
-      session: schema.sessions,
-      account: schema.accounts,
-      verification: schema.verifications,
-      twoFactor: schema.twoFactors,
+      users: schema.users,
+      sessions: schema.sessions,
+      accounts: schema.accounts,
+      verifications: schema.verifications,
+      twoFactors: schema.twoFactors,
     },
   }),
   emailAndPassword: {
@@ -45,10 +46,6 @@ export const auth = betterAuth({
       generateId: () => crypto.randomUUID(),
     },
   },
-  user: { modelName: "users" },
-  session: { modelName: "sessions" },
-  account: { modelName: "accounts" },
-  verification: { modelName: "verifications" },
 });
 
 export type Session = typeof auth.$Infer.Session;

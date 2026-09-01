@@ -1,0 +1,73 @@
+{
+  "workout": {
+    "type": "workout.created",
+    "data": {
+      "id": "0a1b2c3d-4e5f-4a6b-8c7d-9e0f1a2b3c4d",
+      "user_id": "8b1f0f5e-3c2a-4b7d-9e1f-2a3b4c5d6e7f",
+      "type": "running",
+      "start_time": "2026-08-29T06:30:00Z",
+      "end_time": "2026-08-29T07:20:00Z",
+      "zone_offset": "-06:00",
+      "duration_seconds": 3000,
+      "source": { "provider": "garmin", "device": "Forerunner 965" },
+      "calories_kcal": 512.4,
+      "distance_meters": 10000.0,
+      "avg_heart_rate_bpm": 152,
+      "max_heart_rate_bpm": 176,
+      "avg_pace_sec_per_km": 300,
+      "elevation_gain_meters": 84.2
+    }
+  },
+  "sleep": {
+    "type": "sleep.created",
+    "data": {
+      "id": "2c3d4e5f-6a7b-4c8d-9e0f-1a2b3c4d5e6f",
+      "user_id": "8b1f0f5e-3c2a-4b7d-9e1f-2a3b4c5d6e7f",
+      "start_time": "2026-08-28T22:45:00Z",
+      "end_time": "2026-08-29T06:15:00Z",
+      "zone_offset": "-06:00",
+      "duration_seconds": 27000,
+      "source": { "provider": "garmin", "device": "Forerunner 965" },
+      "efficiency_percent": 93.3,
+      "stages": { "awake_minutes": 30, "light_minutes": 240, "deep_minutes": 90, "rem_minutes": 90 },
+      "is_nap": false
+    }
+  },
+  "connection": {
+    "type": "connection.created",
+    "data": {
+      "user_id": "8b1f0f5e-3c2a-4b7d-9e1f-2a3b4c5d6e7f",
+      "provider": "garmin",
+      "connection_id": "5a4b3c2d-1e0f-4a9b-8c7d-6e5f4a3b2c1d",
+      "connected_at": "2026-08-01T12:05:00Z"
+    }
+  },
+  "timeseries": {
+    "type": "heart_rate.created",
+    "data": {
+      "user_id": "8b1f0f5e-3c2a-4b7d-9e1f-2a3b4c5d6e7f",
+      "provider": "garmin",
+      "series_type": "heart_rate",
+      "sample_count": 2,
+      "start_time": "2026-08-29T06:31:00Z",
+      "end_time": "2026-08-29T06:32:00Z",
+      "samples": [
+        { "timestamp": "2026-08-29T06:31:00Z", "value": 148, "unit": "bpm" },
+        { "timestamp": "2026-08-29T06:32:00Z", "value": 151, "unit": "bpm" }
+      ]
+    }
+  },
+  "sync": {
+    "type": "sync.completed",
+    "data": {
+      "user_id": "8b1f0f5e-3c2a-4b7d-9e1f-2a3b4c5d6e7f",
+      "provider": "garmin",
+      "source": "backfill",
+      "run_id": "run-2026-08-30-0001",
+      "status": "success",
+      "message": null,
+      "items_processed": 1284,
+      "metadata": {}
+    }
+  }
+}

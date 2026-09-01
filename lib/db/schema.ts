@@ -61,6 +61,8 @@ export const accounts = pgTable("accounts", {
     .references(() => users.id, { onDelete: "cascade" }),
   accountId: text("account_id").notNull(),
   providerId: text("provider_id").notNull(),
+  // Better Auth ≥1.7: account identity is scoped by issuer.
+  issuer: text("issuer"),
   accessToken: text("access_token"),
   refreshToken: text("refresh_token"),
   idToken: text("id_token"),
@@ -88,6 +90,8 @@ export const twoFactors = pgTable("two_factors", {
     .references(() => users.id, { onDelete: "cascade" }),
   secret: text("secret"),
   backupCodes: text("backup_codes"),
+  verified: boolean("verified").default(true),
+  lockedUntil: timestamp("locked_until", { withTimezone: true }),
 });
 
 export const profiles = pgTable("profiles", {

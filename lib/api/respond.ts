@@ -47,6 +47,7 @@ export function withApi<C = unknown>(handler: Handler<C>): Handler<C> {
     } catch (err) {
       if (err instanceof AuthzError) return apiError(err.status, err.message);
       if (err instanceof ZodError) return apiError(400, "invalid_input");
+      if (err instanceof RangeError) return apiError(400, "invalid_input");
       logger.error({ err, url: req.url.split("?")[0] }, "api_error");
       return apiError(500, "internal");
     }

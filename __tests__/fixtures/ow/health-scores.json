@@ -1,0 +1,45 @@
+{
+  "data": [
+    {
+      "id": "4e5f6a7b-8c9d-4e0f-9a1b-2c3d4e5f6a7b",
+      "category": "sleep",
+      "value": 84,
+      "qualifier": "GOOD",
+      "recorded_at": "2026-08-29T06:15:00Z",
+      "zone_offset": "-06:00",
+      "components": {
+        "deep_sleep_percentage": { "value": 20.0, "qualifier": "GOOD" },
+        "sleep_efficiency": { "value": 93.3, "qualifier": "EXCELLENT" }
+      },
+      "data_source_id": null,
+      "provider": null,
+      "event_record_id": "2c3d4e5f-6a7b-4c8d-9e0f-1a2b3c4d5e6f"
+    },
+    {
+      "id": "5f6a7b8c-9d0e-4f1a-8b2c-3d4e5f6a7b8c",
+      "category": "readiness",
+      "value": 78,
+      "qualifier": null,
+      "recorded_at": "2026-08-29T07:00:00Z",
+      "zone_offset": "-06:00",
+      "components": null,
+      "data_source_id": "6a7b8c9d-0e1f-4a2b-9c3d-4e5f6a7b8c9d",
+      "provider": "oura",
+      "event_record_id": null
+    },
+    {
+      "id": "7b8c9d0e-1f2a-4b3c-8d4e-5f6a7b8c9d0e",
+      "category": "body_battery",
+      "value": 92,
+      "qualifier": null,
+      "recorded_at": "2026-08-29T23:59:00Z",
+      "zone_offset": "-06:00",
+      "components": null,
+      "data_source_id": null,
+      "provider": "garmin",
+      "event_record_id": null
+    }
+  ],
+  "pagination": { "next_cursor": null, "previous_cursor": null, "has_more": false, "total_count": 3 },
+  "metadata": { "resolution": null, "sample_count": 3, "start_time": "2026-08-29T00:00:00Z", "end_time": "2026-08-30T00:00:00Z" }
+}

@@ -1,0 +1,115 @@
+{
+  "data": [
+    {
+      "timestamp": "2026-08-29T06:31:00Z",
+      "zone_offset": "-06:00",
+      "type": "heart_rate",
+      "value": 148,
+      "unit": "bpm",
+      "source": {
+        "provider": "garmin",
+        "source": "garmin",
+        "device": "Forerunner 965",
+        "device_type": "watch",
+        "device_name": "Garmin Forerunner 965"
+      },
+      "is_daily_total": false
+    },
+    {
+      "timestamp": "2026-08-29T06:32:00Z",
+      "zone_offset": "-06:00",
+      "type": "heart_rate",
+      "value": 151,
+      "unit": "bpm",
+      "source": {
+        "provider": "garmin",
+        "source": "garmin",
+        "device": "Forerunner 965",
+        "device_type": "watch",
+        "device_name": "Garmin Forerunner 965"
+      },
+      "is_daily_total": false
+    },
+    {
+      "timestamp": "2026-08-29T07:00:00Z",
+      "zone_offset": null,
+      "type": "garmin_stress_level",
+      "value": 34,
+      "unit": "score",
+      "source": {
+        "provider": "garmin",
+        "source": "garmin",
+        "device": "Forerunner 965",
+        "device_type": "watch",
+        "device_name": "Garmin Forerunner 965"
+      },
+      "is_daily_total": null
+    },
+    {
+      "timestamp": "2026-08-29T07:00:00Z",
+      "zone_offset": null,
+      "type": "garmin_body_battery",
+      "value": 68,
+      "unit": "score",
+      "source": {
+        "provider": "garmin",
+        "source": "garmin",
+        "device": "Forerunner 965",
+        "device_type": "watch",
+        "device_name": "Garmin Forerunner 965"
+      },
+      "is_daily_total": null
+    },
+    {
+      "timestamp": "2026-08-29T03:00:00Z",
+      "zone_offset": null,
+      "type": "oxygen_saturation",
+      "value": 96.5,
+      "unit": "%",
+      "source": {
+        "provider": "garmin",
+        "source": "garmin",
+        "device": "Forerunner 965",
+        "device_type": "watch",
+        "device_name": "Garmin Forerunner 965"
+      },
+      "is_daily_total": false
+    },
+    {
+      "timestamp": "2026-08-29T03:00:00Z",
+      "zone_offset": null,
+      "type": "respiratory_rate",
+      "value": 14.2,
+      "unit": "breaths/min",
+      "source": null,
+      "is_daily_total": false
+    },
+    {
+      "timestamp": "2026-08-29T23:59:00Z",
+      "zone_offset": null,
+      "type": "steps",
+      "value": 12480,
+      "unit": "count",
+      "source": {
+        "provider": "garmin",
+        "source": "garmin",
+        "device": "Forerunner 965",
+        "device_type": "watch",
+        "device_name": "Garmin Forerunner 965"
+      },
+      "is_daily_total": true
+    }
+  ],
+  "pagination": {
+    "next_cursor": null,
+    "previous_cursor": null,
+    "has_more": false,
+    "total_count": 7
+  },
+  "metadata": {
+    "resolution": "1min",
+    "sample_count": 7,
+    "start_time": "2026-08-29T00:00:00Z",
+    "end_time": "2026-08-30T00:00:00Z"
+  }
+}

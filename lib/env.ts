@@ -66,7 +66,12 @@ let cached: Env | null = null;
 
 export function getEnv(): Env {
   if (cached) return cached;
-  const parsed = envSchema.safeParse(process.env);
+  // .env files ship every key with empty values ("ADMIN_EMAIL=") — treat empty
+  // strings as unset so optional url()/email() fields don't fail validation.
+  const cleaned = Object.fromEntries(
+    Object.entries(process.env).filter(([, v]) => v !== ""),
+  );
+  const parsed = envSchema.safeParse(cleaned);
   if (!parsed.success) {
     const details = parsed.error.issues
       .map((i) => `  - ${i.path.join(".")}: ${i.message}`)

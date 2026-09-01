@@ -1,0 +1,65 @@
+{
+  "data": [
+    {
+      "id": "2c3d4e5f-6a7b-4c8d-9e0f-1a2b3c4d5e6f",
+      "start_time": "2026-08-28T22:45:00Z",
+      "end_time": "2026-08-29T06:15:00Z",
+      "zone_offset": "-06:00",
+      "source": {
+        "provider": "garmin",
+        "source": "garmin",
+        "device": "Forerunner 965",
+        "device_type": "watch",
+        "device_name": "Garmin Forerunner 965"
+      },
+      "duration_seconds": 27000,
+      "sleep_duration_seconds": 25200,
+      "efficiency_percent": 93.3,
+      "stages": {
+        "awake_minutes": 30,
+        "light_minutes": 240,
+        "deep_minutes": 90,
+        "rem_minutes": 90
+      },
+      "sleep_stage_intervals": [
+        { "stage": "light", "start_time": "2026-08-28T22:45:00Z", "end_time": "2026-08-29T00:15:00Z" },
+        { "stage": "deep", "start_time": "2026-08-29T00:15:00Z", "end_time": "2026-08-29T01:45:00Z" },
+        { "stage": "rem", "start_time": "2026-08-29T01:45:00Z", "end_time": "2026-08-29T03:15:00Z" },
+        { "stage": "light", "start_time": "2026-08-29T03:15:00Z", "end_time": "2026-08-29T05:45:00Z" },
+        { "stage": "awake", "start_time": "2026-08-29T05:45:00Z", "end_time": "2026-08-29T06:15:00Z" }
+      ],
+      "is_nap": false
+    },
+    {
+      "id": "3d4e5f6a-7b8c-4d9e-8f1a-2b3c4d5e6f7a",
+      "start_time": "2026-08-29T14:00:00Z",
+      "end_time": "2026-08-29T14:30:00Z",
+      "zone_offset": "-06:00",
+      "source": {
+        "provider": "oura",
+        "source": "oura",
+        "device": null,
+        "device_type": "ring",
+        "device_name": null
+      },
+      "duration_seconds": 1800,
+      "sleep_duration_seconds": null,
+      "efficiency_percent": null,
+      "stages": null,
+      "sleep_stage_intervals": null,
+      "is_nap": true
+    }
+  ],
+  "pagination": {
+    "next_cursor": null,
+    "previous_cursor": null,
+    "has_more": false,
+    "total_count": 2
+  },
+  "metadata": {
+    "resolution": null,
+    "sample_count": 2,
+    "start_time": "2026-08-28T00:00:00Z",
+    "end_time": "2026-08-30T00:00:00Z"
+  }
+}

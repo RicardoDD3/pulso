@@ -1,0 +1,132 @@
+{
+  "activity": {
+    "data": [
+      {
+        "date": "2026-08-29",
+        "source": {
+          "provider": "garmin",
+          "source": "garmin",
+          "device": "Forerunner 965",
+          "device_type": "watch",
+          "device_name": "Garmin Forerunner 965"
+        },
+        "steps": 12480,
+        "distance_meters": 9314.6,
+        "floors_climbed": 12,
+        "elevation_meters": 36.0,
+        "active_calories_kcal": 642.5,
+        "total_calories_kcal": 2450.2,
+        "active_minutes": 95,
+        "sedentary_minutes": 610,
+        "intensity_minutes": { "light": 20, "moderate": 35, "vigorous": 25 },
+        "heart_rate": { "avg_bpm": 72, "max_bpm": 176, "min_bpm": 44 }
+      }
+    ],
+    "pagination": { "next_cursor": null, "previous_cursor": null, "has_more": false, "total_count": 1 },
+    "metadata": { "resolution": null, "sample_count": 1, "start_time": "2026-08-29T00:00:00Z", "end_time": "2026-08-30T00:00:00Z" }
+  },
+  "sleep": {
+    "data": [
+      {
+        "date": "2026-08-29",
+        "source": {
+          "provider": "garmin",
+          "source": "garmin",
+          "device": "Forerunner 965",
+          "device_type": "watch",
+          "device_name": "Garmin Forerunner 965"
+        },
+        "start_time": "2026-08-28T22:45:00Z",
+        "end_time": "2026-08-29T06:15:00Z",
+        "zone_offset": "-06:00",
+        "duration_minutes": 420,
+        "total_duration_minutes": 450,
+        "time_in_bed_minutes": 450,
+        "efficiency_percent": 93.3,
+        "stages": { "awake_minutes": 30, "light_minutes": 240, "deep_minutes": 90, "rem_minutes": 90 },
+        "interruptions_count": 2,
+        "nap_count": 1,
+        "nap_duration_minutes": 30,
+        "sessions": [
+          {
+            "start_time": "2026-08-28T22:45:00Z",
+            "end_time": "2026-08-29T06:15:00Z",
+            "zone_offset": "-06:00",
+            "duration_minutes": 420,
+            "is_nap": false
+          },
+          {
+            "start_time": "2026-08-29T14:00:00Z",
+            "end_time": "2026-08-29T14:30:00Z",
+            "zone_offset": "-06:00",
+            "duration_minutes": 30,
+            "is_nap": true
+          }
+        ],
+        "avg_heart_rate_bpm": 54,
+        "avg_hrv_sdnn_ms": 48.5,
+        "avg_hrv_rmssd_ms": 42.1,
+        "avg_respiratory_rate": 14.2,
+        "avg_spo2_percent": 96.5
+      }
+    ],
+    "pagination": { "next_cursor": null, "previous_cursor": null, "has_more": false, "total_count": 1 },
+    "metadata": { "resolution": null, "sample_count": 1, "start_time": "2026-08-29T00:00:00Z", "end_time": "2026-08-30T00:00:00Z" }
+  },
+  "recovery": {
+    "data": [
+      {
+        "date": "2026-08-29",
+        "source": {
+          "provider": "whoop",
+          "source": "whoop",
+          "device": "WHOOP 4.0",
+          "device_type": "band",
+          "device_name": null
+        },
+        "sleep_duration_seconds": 25200,
+        "sleep_efficiency_percent": 93.3,
+        "resting_heart_rate_bpm": 46,
+        "avg_hrv_sdnn_ms": null,
+        "avg_hrv_rmssd_ms": 68.4,
+        "avg_spo2_percent": 96.1,
+        "recovery_score": 82
+      }
+    ],
+    "pagination": { "next_cursor": null, "previous_cursor": null, "has_more": false, "total_count": 1 },
+    "metadata": { "resolution": null, "sample_count": 1, "start_time": "2026-08-29T00:00:00Z", "end_time": "2026-08-30T00:00:00Z" }
+  },
+  "body": {
+    "source": {
+      "provider": "garmin",
+      "source": "garmin",
+      "device": "Index S2",
+      "device_type": "scale",
+      "device_name": "Garmin Index S2"
+    },
+    "slow_changing": {
+      "weight_kg": 72.5,
+      "height_cm": 175.5,
+      "body_fat_percent": 18.5,
+      "muscle_mass_kg": 58.2,
+      "bmi": 23.5,
+      "age": 32
+    },
+    "averaged": {
+      "period_days": 7,
+      "resting_heart_rate_bpm": 46,
+      "avg_hrv_sdnn_ms": 48.5,
+      "avg_hrv_rmssd_ms": 42.1,
+      "period_start": "2026-08-23T00:00:00Z",
+      "period_end": "2026-08-30T00:00:00Z"
+    },
+    "latest": {
+      "body_temperature_celsius": 36.6,
+      "body_temperature_measured_at": "2026-08-29T22:00:00Z",
+      "skin_temperature_celsius": null,
+      "skin_temperature_measured_at": null,
+      "blood_pressure": null,
+      "blood_pressure_measured_at": null
+    }
+  }
+}
