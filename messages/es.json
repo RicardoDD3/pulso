@@ -146,5 +146,17 @@
     "typeYourEmail": "tu@correo.com",
     "deleteConfirmDialog": "Esto borra permanentemente tu cuenta y cada fila de tus datos. No hay deshacer. ¿Continuar?",
     "deleteFailed": "El borrado falló — verifica que el correo coincida con tu cuenta."
+  },
+  "workout": {
+    "load": "Carga",
+    "moving": "En movimiento",
+    "hrZones": "Zonas FC",
+    "distance": "Distancia",
+    "time": "Tiempo",
+    "pace": "Ritmo",
+    "cadence": "Cadencia",
+    "weather": "Clima",
+    "feelsLike": "sensación",
+    "uploadFitHint": "Sube el .fit de esta actividad para ver vueltas, ruta, dinámica y training effect real"
   }
 }

@@ -146,5 +146,17 @@
     "typeYourEmail": "your@email.com",
     "deleteConfirmDialog": "This permanently deletes your account and every row of your data. There is no undo. Continue?",
     "deleteFailed": "Deletion failed — check the email matches your account."
+  },
+  "workout": {
+    "load": "Load",
+    "moving": "Moving",
+    "hrZones": "HR zones",
+    "distance": "Distance",
+    "time": "Time",
+    "pace": "Pace",
+    "cadence": "Cadence",
+    "weather": "Weather",
+    "feelsLike": "feels like",
+    "uploadFitHint": "Upload the .fit file of this activity to see laps, route, dynamics and real training effect"
   }
 }

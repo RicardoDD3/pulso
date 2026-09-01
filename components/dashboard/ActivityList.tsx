@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { WorkoutDetail } from "./WorkoutDetail";
 
 type Workout = {
   id: string;
@@ -32,6 +33,7 @@ function fmtPace(distanceM: number | null, durationS: number): string | null {
 
 export function ActivityList({ date }: { date: string }) {
   const [workouts, setWorkouts] = useState<Workout[]>([]);
+  const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -54,7 +56,10 @@ export function ActivityList({ date }: { date: string }) {
         const pace = fmtPace(w.distanceM, w.durationS);
         return (
           <div key={w.id} className="rounded-xl border border-zinc-800 bg-zinc-900 p-4">
-            <div className="flex items-center justify-between">
+            <div
+              className="flex cursor-pointer items-center justify-between"
+              onClick={() => setExpanded((prev) => (prev === w.id ? null : w.id))}
+            >
               <span className="text-sm font-semibold">
                 {w.name ?? w.sport}
                 <span className="ml-2 text-xs font-normal text-zinc-500">{w.provider}</span>
@@ -71,6 +76,7 @@ export function ActivityList({ date }: { date: string }) {
               {w.calories != null ? <span>{w.calories} kcal</span> : null}
               {w.elevationGainM != null ? <span>↗ {Math.round(w.elevationGainM)} m</span> : null}
             </div>
+            {expanded === w.id ? <div className="mt-3"><WorkoutDetail workoutId={w.id} /></div> : null}
           </div>
         );
       })}

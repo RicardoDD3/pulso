@@ -21,6 +21,7 @@ const MESSAGES: Record<string, string> = {
   max_sets: "Max 20 sets per exercise per day.",
   catalog_no_delete: "The exercise catalog has no hard delete — hide it instead.",
   internal: "Something went wrong.",
+  fit_mismatch: "The FIT file does not match this workout.",
 };
 
 export function apiError(status: number, code: keyof typeof MESSAGES | string) {
