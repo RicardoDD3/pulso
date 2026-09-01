@@ -37,7 +37,8 @@
     "show": "Show",
     "hide": "Hide",
     "today": "Today",
-    "emptyState": "No active exercises. Add one to start logging."
+    "emptyState": "No active exercises. Add one to start logging.",
+    "setGoal": "Set weekly goal"
   },
   "settings": {
     "title": "Settings",

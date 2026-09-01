@@ -122,6 +122,19 @@ function BodyweightCard({
   const t = useTranslations("exercises");
   const increment = def.increment ?? 1;
 
+  async function editGoal() {
+    const raw = window.prompt(t("weeklyGoal"), def.weeklyGoal != null ? String(def.weeklyGoal) : "");
+    if (raw === null) return;
+    const weeklyGoal = raw.trim() === "" ? null : Number(raw);
+    if (weeklyGoal !== null && (!Number.isInteger(weeklyGoal) || weeklyGoal < 0)) return;
+    await fetch(`/api/exercises/definitions/${def.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ weeklyGoal }),
+    });
+    await onChanged();
+  }
+
   async function logReps(next: number) {
     await fetch("/api/exercises/logs", {
       method: "POST",
@@ -137,11 +150,9 @@ function BodyweightCard({
         <span className="text-sm font-semibold">
           {def.emoji} {def.label}
         </span>
-        {def.weeklyGoal ? (
-          <span className="text-xs text-zinc-500">
-            {t("weeklyGoal")}: {def.weeklyGoal}
-          </span>
-        ) : null}
+        <button onClick={editGoal} className="text-xs text-zinc-500 hover:text-zinc-300">
+          {def.weeklyGoal ? `${t("weeklyGoal")}: ${def.weeklyGoal}` : t("setGoal")}
+        </button>
       </div>
       <div className="mt-3 flex items-center justify-between">
         <span className="text-3xl font-bold tabular-nums">{reps}</span>

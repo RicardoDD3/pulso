@@ -37,7 +37,8 @@
     "show": "Mostrar",
     "hide": "Ocultar",
     "today": "Hoy",
-    "emptyState": "No hay ejercicios activos. Agrega uno para empezar a registrar."
+    "emptyState": "No hay ejercicios activos. Agrega uno para empezar a registrar.",
+    "setGoal": "Fijar meta semanal"
   },
   "settings": {
     "title": "Ajustes",
