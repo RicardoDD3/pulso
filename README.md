@@ -75,8 +75,11 @@ npm install
 cp .env.example .env
 docker compose up -d postgres redis    # local services
 npm run db:migrate
+npx tsx scripts/seed-demo.ts           # optional: demo@pulso.local / demo-pulso-1234
 npm run dev
-npm test
+npm test                               # unit suite
+npm run test:db                        # authz suite (needs TEST_DATABASE_URL)
+npx playwright test                    # E2E against the running app
 ```
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). Policy: **every change ships with a
