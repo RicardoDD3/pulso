@@ -156,6 +156,11 @@ export class OwClient {
     );
   }
 
+  /** DELETE /users/{id} — removes the OW user, its tokens and data. */
+  async deleteUser(owUserId: string): Promise<void> {
+    await this.request("DELETE /users/{id}", `/users/${owUserId}`, { method: "DELETE" });
+  }
+
   // -------------------------------------------------------------------------
   // Connections / OAuth
   // -------------------------------------------------------------------------

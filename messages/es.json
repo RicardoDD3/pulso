@@ -127,5 +127,24 @@
     "weight": "Peso (kg)",
     "bodyBattery": "Body Battery",
     "effortHint": "Sube archivos FIT en tus actividades para ver tendencias de training effect, carga y GAP."
+  },
+  "account": {
+    "sharingTitle": "Compartir mis datos (atleta ↔ coach)",
+    "coachEmail": "Correo del coach",
+    "share": "Compartir",
+    "shareCreated": "Invitación creada — se activa cuando la acepte.",
+    "shareFailed": "No se pudo compartir. ¿Existe esa cuenta?",
+    "receivedTitle": "Compartidos conmigo",
+    "accept": "Aceptar",
+    "revoke": "Revocar",
+    "view": "Ver",
+    "exportTitle": "Exportar mis datos",
+    "exportHint": "Un ZIP con un JSON por tabla más tus PDFs de laboratorio originales.",
+    "exportButton": "Descargar export",
+    "deleteTitle": "Borrar cuenta",
+    "deleteHint": "Borra TODOS tus datos permanentemente — aquí y en Open Wearables. Escribe tu correo para confirmar.",
+    "typeYourEmail": "tu@correo.com",
+    "deleteConfirmDialog": "Esto borra permanentemente tu cuenta y cada fila de tus datos. No hay deshacer. ¿Continuar?",
+    "deleteFailed": "El borrado falló — verifica que el correo coincida con tu cuenta."
   }
 }
