@@ -17,7 +17,8 @@
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
     "worker": "tsx workers/index.ts",
-    "seed:demo": "tsx scripts/seed-demo.ts"
+    "seed:demo": "tsx scripts/seed-demo.ts",
+    "test:db": "jest --config jest.db.config.js --runInBand --forceExit"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^4.0.47",

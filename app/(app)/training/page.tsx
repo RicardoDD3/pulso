@@ -1,17 +1,12 @@
-import { useTranslations } from "next-intl";
+import { getFeatures } from "@/lib/system/features";
+import { TrainingView } from "@/components/training/TrainingView";
 
 export default function TrainingPage() {
-  // Placeholder until Fase 6 (full Training port).
-  return <TrainingEmpty />;
-}
-
-function TrainingEmpty() {
-  const t = useTranslations("nav");
-  const tCommon = useTranslations("common");
+  const features = getFeatures();
   return (
-    <div className="space-y-2">
-      <h1 className="text-2xl font-bold">{t("training")}</h1>
-      <p className="text-sm text-zinc-400">{tCommon("featureDisabled")}</p>
-    </div>
+    <TrainingView
+      aiPlansEnabled={features.aiPlansEnabled}
+      chatEnabled={features.chatEnabled}
+    />
   );
 }

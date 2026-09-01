@@ -170,5 +170,94 @@
     "model": "Model",
     "feature": "Feature",
     "calls": "Calls"
+  },
+  "training": {
+    "title": "Training",
+    "tabPlan": "Plan",
+    "tabHistory": "History",
+    "noPlanTitle": "You have no active training plan.",
+    "generator": {
+      "title": "New training plan",
+      "modeDeterministic": "Standard",
+      "modeAi": "AI",
+      "raceDistance": "Race distance",
+      "customKm": "Custom (km)",
+      "raceDate": "Race date",
+      "currentWeeklyKm": "Current weekly km",
+      "daysPerWeek": "Days per week",
+      "experience": "Experience",
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced",
+      "longRunDay": "Long run day",
+      "saturday": "Saturday",
+      "sunday": "Sunday",
+      "planName": "Plan name (optional)",
+      "minDistanceHint": "The standard generator needs a race of at least 21 km. Use the AI generator for shorter races.",
+      "submit": "Generate plan",
+      "submitting": "Generating…",
+      "aiName": "Plan name",
+      "goalType": "Goal",
+      "goalTime": "Goal time (optional)",
+      "goalDistanceKm": "Race distance (km)",
+      "availableDays": "Available days per week",
+      "terrain": "Terrain",
+      "road": "Road",
+      "trail": "Trail",
+      "mixed": "Mixed",
+      "goalTypes": {
+        "marathon": "Marathon",
+        "ultra": "Ultra",
+        "half_marathon": "Half marathon",
+        "10k": "10K",
+        "general": "General"
+      }
+    },
+    "plan": {
+      "weekOf": "Week {n} of {total}",
+      "daysToRace": "{days, plural, one {# day to race} other {# days to race}}",
+      "raceDone": "Race day has passed",
+      "sync": "Sync",
+      "syncing": "Syncing…",
+      "versions": "Versions",
+      "noVersions": "No saved versions.",
+      "restore": "Restore",
+      "markCompleted": "Mark completed",
+      "abandon": "Abandon",
+      "status": {
+        "active": "Active",
+        "completed": "Completed",
+        "abandoned": "Abandoned"
+      },
+      "planned": "Planned",
+      "actual": "Actual",
+      "weekTotal": "Week total",
+      "targetKm": "Target"
+    },
+    "types": {
+      "easy_run": "Easy run",
+      "long_run": "Long run",
+      "tempo": "Tempo",
+      "intervals": "Intervals",
+      "recovery_run": "Recovery",
+      "strength": "Strength"
+    },
+    "steps": {
+      "title": "Weekly steps",
+      "goal": "Goal {min}–{max}",
+      "empty": "No steps data this week."
+    },
+    "chat": {
+      "open": "Planner chat",
+      "title": "Planner chat",
+      "placeholder": "Ask or change your plan…",
+      "send": "Send",
+      "empty": "Ask the planner to adjust your plan — e.g. \"move Wednesday's run to Thursday\"."
+    },
+    "history": {
+      "empty": "No past plans.",
+      "back": "Back to list",
+      "created": "Created"
+    }
   }
 }

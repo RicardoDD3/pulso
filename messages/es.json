@@ -170,5 +170,94 @@
     "model": "Modelo",
     "feature": "Función",
     "calls": "Llamadas"
+  },
+  "training": {
+    "title": "Entrenamiento",
+    "tabPlan": "Plan",
+    "tabHistory": "Historial",
+    "noPlanTitle": "No tienes un plan de entrenamiento activo.",
+    "generator": {
+      "title": "Nuevo plan de entrenamiento",
+      "modeDeterministic": "Estándar",
+      "modeAi": "IA",
+      "raceDistance": "Distancia de la carrera",
+      "customKm": "Personalizada (km)",
+      "raceDate": "Fecha de la carrera",
+      "currentWeeklyKm": "Km semanales actuales",
+      "daysPerWeek": "Días por semana",
+      "experience": "Experiencia",
+      "beginner": "Principiante",
+      "intermediate": "Intermedio",
+      "advanced": "Avanzado",
+      "longRunDay": "Día del fondo",
+      "saturday": "Sábado",
+      "sunday": "Domingo",
+      "planName": "Nombre del plan (opcional)",
+      "minDistanceHint": "El generador estándar necesita una carrera de al menos 21 km. Usa el generador de IA para distancias más cortas.",
+      "submit": "Generar plan",
+      "submitting": "Generando…",
+      "aiName": "Nombre del plan",
+      "goalType": "Objetivo",
+      "goalTime": "Tiempo objetivo (opcional)",
+      "goalDistanceKm": "Distancia de la carrera (km)",
+      "availableDays": "Días disponibles por semana",
+      "terrain": "Terreno",
+      "road": "Asfalto",
+      "trail": "Trail",
+      "mixed": "Mixto",
+      "goalTypes": {
+        "marathon": "Maratón",
+        "ultra": "Ultra",
+        "half_marathon": "Medio maratón",
+        "10k": "10K",
+        "general": "General"
+      }
+    },
+    "plan": {
+      "weekOf": "Semana {n} de {total}",
+      "daysToRace": "{days, plural, one {# día para la carrera} other {# días para la carrera}}",
+      "raceDone": "El día de la carrera ya pasó",
+      "sync": "Sincronizar",
+      "syncing": "Sincronizando…",
+      "versions": "Versiones",
+      "noVersions": "No hay versiones guardadas.",
+      "restore": "Restaurar",
+      "markCompleted": "Marcar completado",
+      "abandon": "Abandonar",
+      "status": {
+        "active": "Activo",
+        "completed": "Completado",
+        "abandoned": "Abandonado"
+      },
+      "planned": "Planeado",
+      "actual": "Real",
+      "weekTotal": "Total semanal",
+      "targetKm": "Meta"
+    },
+    "types": {
+      "easy_run": "Rodaje suave",
+      "long_run": "Fondo",
+      "tempo": "Tempo",
+      "intervals": "Intervalos",
+      "recovery_run": "Recuperación",
+      "strength": "Fuerza"
+    },
+    "steps": {
+      "title": "Pasos semanales",
+      "goal": "Meta {min}–{max}",
+      "empty": "Sin datos de pasos esta semana."
+    },
+    "chat": {
+      "open": "Chat Planes",
+      "title": "Chat Planes",
+      "placeholder": "Pregunta o modifica tu plan…",
+      "send": "Enviar",
+      "empty": "Pídele al planificador que ajuste tu plan — p. ej. \"mueve la corrida del miércoles al jueves\"."
+    },
+    "history": {
+      "empty": "No hay planes anteriores.",
+      "back": "Volver a la lista",
+      "created": "Creado"
+    }
   }
 }
