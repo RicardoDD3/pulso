@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
+import { useViewAs } from "@/lib/hooks/use-view-as";
 
 type Lap = {
   id: string;
@@ -66,9 +67,10 @@ export function WorkoutDetail({ workoutId }: { workoutId: string }) {
   const [error, setError] = useState(false);
   const [uploading, setUploading] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
+  const { viewAs, qs } = useViewAs();
 
   const load = () =>
-    fetch(`/api/health/workouts/${workoutId}`)
+    fetch(qs(`/api/health/workouts/${workoutId}`))
       .then((r) => (r.ok ? r.json() : Promise.reject()))
       .then(setDetail)
       .catch(() => setError(true));
@@ -178,7 +180,7 @@ export function WorkoutDetail({ workoutId }: { workoutId: string }) {
       ) : null}
 
       {/* FIT upload hint — only when no fine detail yet */}
-      {workout.detailSource == null ? (
+      {workout.detailSource == null && !viewAs ? (
         <div>
           <input
             ref={fileRef}

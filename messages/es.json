@@ -145,7 +145,10 @@
     "deleteHint": "Borra TODOS tus datos permanentemente — aquí y en Open Wearables. Escribe tu correo para confirmar.",
     "typeYourEmail": "tu@correo.com",
     "deleteConfirmDialog": "Esto borra permanentemente tu cuenta y cada fila de tus datos. No hay deshacer. ¿Continuar?",
-    "deleteFailed": "El borrado falló — verifica que el correo coincida con tu cuenta."
+    "deleteFailed": "El borrado falló — verifica que el correo coincida con tu cuenta.",
+    "viewingAs": "Viendo:",
+    "readOnly": "solo lectura",
+    "backToMine": "Volver a mis datos"
   },
   "workout": {
     "load": "Carga",

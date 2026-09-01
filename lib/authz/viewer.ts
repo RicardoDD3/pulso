@@ -9,8 +9,10 @@ import { and, eq } from "drizzle-orm";
 import { headers } from "next/headers";
 import { getDb, schema } from "@/lib/db";
 
-export const GRANT_SCOPES = ["health", "workouts", "labs", "training", "exercises"] as const;
-export type GrantScope = (typeof GRANT_SCOPES)[number];
+export { GRANT_SCOPES } from "./scopes";
+export type { GrantScope } from "./scopes";
+import { GRANT_SCOPES } from "./scopes";
+import type { GrantScope } from "./scopes";
 
 export type DataGrant = {
   id: string;

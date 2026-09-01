@@ -76,6 +76,26 @@ export async function activePlan(viewer: Viewer) {
   return row ?? null;
 }
 
+/**
+ * Plan row WITHOUT normalization — only for the sync route, which needs the
+ * "did normalization change anything" signal to persist + rebuild once.
+ * Every other caller uses getPlan.
+ */
+export async function getPlanRaw(viewer: Viewer, planId: string) {
+  requireScope(viewer, "training");
+  const [row] = await getDb()
+    .select()
+    .from(schema.trainingPlans)
+    .where(
+      and(
+        eq(schema.trainingPlans.id, planId),
+        eq(schema.trainingPlans.userId, viewer.effectiveUserId),
+      ),
+    )
+    .limit(1);
+  return row ?? null;
+}
+
 /** Full plan row with plan_json normalized on read. Null when not owned/found. */
 export async function getPlan(viewer: Viewer, planId: string) {
   requireScope(viewer, "training");

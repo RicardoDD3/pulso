@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
+import { useViewAs } from "@/lib/hooks/use-view-as";
 import { KpiCard } from "./KpiCard";
 import { IntradayChart } from "./IntradayChart";
 import { ActivityList } from "./ActivityList";
@@ -55,11 +56,12 @@ export function TodayView() {
   const [scores, setScores] = useState<ScoreRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const { qs } = useViewAs();
 
   const load = useCallback(async (d: string) => {
     setLoading(true);
     try {
-      const res = await fetch(`/api/health/daily?date=${d}`);
+      const res = await fetch(qs(`/api/health/daily?date=${d}`));
       if (!res.ok) throw new Error();
       const json = await res.json();
       setDay(json.day);
@@ -71,7 +73,7 @@ export function TodayView() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [qs]);
 
   useEffect(() => {
     void load(date);

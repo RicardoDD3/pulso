@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { useViewAs } from "@/lib/hooks/use-view-as";
 import {
   Line,
   LineChart,
@@ -75,14 +76,15 @@ export function TrendsView() {
   const [days, setDays] = useState<(typeof RANGES)[number]>(30);
   const [data, setData] = useState<TrendsPayload | null>(null);
   const [error, setError] = useState(false);
+  const { qs } = useViewAs();
 
   useEffect(() => {
     setData(null);
-    fetch(`/api/health/trends?days=${days}`)
+    fetch(qs(`/api/health/trends?days=${days}`))
       .then((r) => (r.ok ? r.json() : Promise.reject()))
       .then(setData)
       .catch(() => setError(true));
-  }, [days]);
+  }, [days, qs]);
 
   if (error) return <p className="text-sm text-red-400">{tCommon("error")}</p>;
 

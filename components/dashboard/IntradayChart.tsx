@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useViewAs } from "@/lib/hooks/use-view-as";
 import {
   Line,
   LineChart,
@@ -20,6 +21,7 @@ const SERIES = [
 
 export function IntradayChart({ date }: { date: string }) {
   const [series, setSeries] = useState<Record<string, Sample[]>>({});
+  const { qs } = useViewAs();
 
   useEffect(() => {
     let cancelled = false;
@@ -28,7 +30,7 @@ export function IntradayChart({ date }: { date: string }) {
       await Promise.all(
         SERIES.map(async ({ metric }) => {
           try {
-            const res = await fetch(`/api/health/samples?date=${date}&metric=${metric}`);
+            const res = await fetch(qs(`/api/health/samples?date=${date}&metric=${metric}`));
             if (res.ok) results[metric] = (await res.json()).samples;
           } catch {
             /* series simply not shown */
@@ -40,7 +42,7 @@ export function IntradayChart({ date }: { date: string }) {
     return () => {
       cancelled = true;
     };
-  }, [date]);
+  }, [date, qs]);
 
   const populated = SERIES.filter(({ metric }) => (series[metric]?.length ?? 0) > 0);
   if (populated.length === 0) return null;

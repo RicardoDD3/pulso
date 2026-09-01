@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { GRANT_SCOPES, type GrantScope } from "@/lib/authz/viewer";
+import { GRANT_SCOPES, type GrantScope } from "@/lib/authz/scopes";
 
 type GrantRow = {
   id: string;

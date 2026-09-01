@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { WorkoutDetail } from "./WorkoutDetail";
+import { useViewAs } from "@/lib/hooks/use-view-as";
 
 type Workout = {
   id: string;
@@ -34,10 +35,11 @@ function fmtPace(distanceM: number | null, durationS: number): string | null {
 export function ActivityList({ date }: { date: string }) {
   const [workouts, setWorkouts] = useState<Workout[]>([]);
   const [expanded, setExpanded] = useState<string | null>(null);
+  const { qs } = useViewAs();
 
   useEffect(() => {
     let cancelled = false;
-    fetch(`/api/health/workouts?from=${date}&to=${date}`)
+    fetch(qs(`/api/health/workouts?from=${date}&to=${date}`))
       .then((r) => (r.ok ? r.json() : { workouts: [] }))
       .then((json) => {
         if (!cancelled) setWorkouts(json.workouts ?? []);
@@ -46,7 +48,7 @@ export function ActivityList({ date }: { date: string }) {
     return () => {
       cancelled = true;
     };
-  }, [date]);
+  }, [date, qs]);
 
   if (workouts.length === 0) return null;
 

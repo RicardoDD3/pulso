@@ -145,7 +145,10 @@
     "deleteHint": "Deletes ALL your data permanently — here and in Open Wearables. Type your email to confirm.",
     "typeYourEmail": "your@email.com",
     "deleteConfirmDialog": "This permanently deletes your account and every row of your data. There is no undo. Continue?",
-    "deleteFailed": "Deletion failed — check the email matches your account."
+    "deleteFailed": "Deletion failed — check the email matches your account.",
+    "viewingAs": "Viewing:",
+    "readOnly": "read-only",
+    "backToMine": "Back to my data"
   },
   "workout": {
     "load": "Load",
