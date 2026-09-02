@@ -33,7 +33,7 @@ const day: GeneratedDay = {
   dayLabel: "Lun",
   sessionType: "z2",
   distanceKm: 12,
-  zone: "Z2",
+  zone: "Z2 pace",
   notes: "",
   isKeySession: false,
 };
@@ -56,7 +56,7 @@ test("seleccionar texto de un input y soltar fuera del panel NO cierra el modal"
   const { container } = renderModal(onClose);
   const backdrop = container.firstChild as HTMLElement;
 
-  const zone = screen.getByDisplayValue("Z2");
+  const zone = screen.getByDisplayValue("Z2 pace");
   fireEvent.pointerDown(zone);
   fireEvent.click(backdrop);
 

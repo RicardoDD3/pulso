@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { WeekCard } from "./WeekCard";
-import { WeekBoard } from "./WeekBoard";
+import WeekBoard from "./WeekBoard";
 import { StepsBox } from "./StepsBox";
 import { PlannerChat } from "./PlannerChat";
 import InsightsPanel from "./insights/InsightsPanel";

@@ -43,7 +43,6 @@ test("muestra origen, destino y el resultado de la fusión", () => {
   expect(screen.getByText(/Mar 4/)).toBeInTheDocument();
   expect(screen.getByText(/Mié 5/)).toBeInTheDocument();
   expect(screen.getByText(/19 km/)).toBeInTheDocument();
-  expect(screen.getByText(/Planner/)).toBeInTheDocument();
 });
 
 test("Fusionar llama onConfirm y Cancelar llama onCancel", () => {

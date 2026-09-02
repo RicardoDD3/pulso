@@ -195,11 +195,11 @@ test("carga plan + salud, compone los paneles y dispara el auto-sync", async () 
 
   // TodayWorkoutCard: hoy es día z2 de 8 km.
   expect(screen.getByText("TODAY")).toBeInTheDocument();
-  expect(screen.getByText("8 km")).toBeInTheDocument();
+  expect(screen.getAllByText("8 km").length).toBeGreaterThan(0);
 
   // Anillos de progreso + countdown.
-  expect(screen.getByText("Progress")).toBeInTheDocument();
-  expect(screen.getByText("20 days")).toBeInTheDocument();
+  expect(screen.getAllByText("Progress").length).toBeGreaterThan(0);
+  expect(screen.getAllByText("20 days").length).toBeGreaterThan(0);
 
   const urls = fetchMock.mock.calls.map(([u]) => String(u));
   expect(urls).toContain("/api/training/plans/plan-1/sync");

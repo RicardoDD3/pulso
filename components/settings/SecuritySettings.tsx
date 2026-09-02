@@ -30,8 +30,10 @@ export function SecuritySettings() {
       setMessage(t("wrongPassword"));
       return;
     }
-    setTotpUri(data.totpURI);
-    setBackupCodes(data.backupCodes ?? []);
+    // enable() returns { totpURI, backupCodes } for the TOTP method.
+    const totp = data as { totpURI?: string; backupCodes?: string[] };
+    if (totp.totpURI) setTotpUri(totp.totpURI);
+    setBackupCodes(totp.backupCodes ?? []);
   }
 
   async function confirm(e: React.FormEvent) {

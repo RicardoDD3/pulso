@@ -258,6 +258,311 @@
       "empty": "No hay planes anteriores.",
       "back": "Volver a la lista",
       "created": "Creado"
+    },
+    "week": {
+      "addExtraTitle": "Add Extra Title",
+      "board": {
+        "assignError": "Assign Error",
+        "extraError": "Extra Error",
+        "extraMoveHint": "Extra Move Hint",
+        "goalError": "Goal Error",
+        "moveError": "Move Error",
+        "moveExtraError": "Move Extra Error",
+        "rebalanceError": "Rebalance Error",
+        "stepsGoalError": "Steps Goal Error",
+        "strengthShort": "Strength Short",
+        "tapMoveHint": "Tap Move Hint"
+      },
+      "dayEdit": {
+        "cancel": "Cancel",
+        "distance": "Distance",
+        "notes": "Notes",
+        "save": "Save",
+        "saveError": "Save Error",
+        "saving": "Saving",
+        "sessionType": "Tipo de sesión",
+        "strengthDay": "Strength Day",
+        "zone": "Zone",
+        "z2": "Z2",
+        "hiit": "HIIT",
+        "long": "Larga",
+        "strength": "Fuerza",
+        "rest": "Descanso",
+        "easy": "Suave",
+        "tempo": "Tempo",
+        "recovery": "Recuperación",
+        "long_run": "Tirada larga",
+        "back_to_back": "Días consecutivos"
+      },
+      "discardCarryover": "Descartar pendiente",
+      "done": "Done",
+      "dragExtraTitle": "Drag Extra Title",
+      "dropHere": "Drop Here",
+      "editHint": "Edit Hint",
+      "excluded": "Excluded",
+      "exerciseCount": "Exercise Count",
+      "exercisesLabel": "Exercises Label",
+      "extraSession": "Sesión extra",
+      "inclPending": "incl. {km} km pendientes",
+      "keySession": "Sesión clave",
+      "kmPlaceholder": "Km Placeholder",
+      "logExercisesHint": "Log Exercises Hint",
+      "logStrengthHint": "Log Strength Hint",
+      "merge": {
+        "cancel": "Cancelar",
+        "confirm": "Fusionar",
+        "noUndo": "Esto no se puede deshacer.",
+        "runResult": "{km} km",
+        "runResultBefore": "El resultado es ",
+        "runTitle": "¿Fusionar carreras?",
+        "strengthBefore": "Fusionar en {day} deja ",
+        "strengthLoss": "una sesión de fuerza menos",
+        "strengthTitle": "¿Fusionar sesiones de fuerza?"
+      },
+      "move": "Move",
+      "movedFrom": "Movida de {date}",
+      "ok": "Ok",
+      "pending": "pendiente",
+      "pendingFrom": "pendiente de {date}",
+      "pendingFromShort": "Pending From Short",
+      "phases": {
+        "base": "Base",
+        "build": "Construcción",
+        "peak": "Pico",
+        "race": "Carrera",
+        "rest": "Descanso",
+        "taper": "Afinamiento"
+      },
+      "quickLog": {
+        "deleteError": "Delete Error",
+        "error": "Error",
+        "exercisesLabel": "Exercises Label",
+        "loading": "Loading",
+        "minusSet": "Minus Set",
+        "removeLastSet": "Remove Last Set",
+        "reps": "Reps",
+        "saveError": "Save Error",
+        "saving": "Saving",
+        "sets": "Sets",
+        "weightLb": "Weight Lb",
+        "weights": "Pesas",
+        "close": "Close",
+        "emptyCatalog": "Empty Catalog"
+      },
+      "reassignRun": "Reassign Run",
+      "rebalance": {
+        "apply": "Apply",
+        "applying": "Applying",
+        "discarded": "Discarded",
+        "dismiss": "Dismiss",
+        "dismissing": "Dismissing",
+        "reopen": "Reopen"
+      },
+      "reincludeRun": "Reinclude Run",
+      "removeExtra": "Quitar sesión extra",
+      "removeMoved": "Devolverla (baja la meta semanal)",
+      "retypeExtra": "Retype Extra",
+      "runDetailTitle": "Run Detail Title",
+      "secondEasyRun": "Second Easy Run",
+      "sessions": {
+        "easy": "Suave",
+        "hiit": "HIIT",
+        "long": "Larga",
+        "rest": "Descanso",
+        "strength": "Fuerza",
+        "z2": "Z2"
+      },
+      "stepsLabel": "Steps Label",
+      "totals": {
+        "addGoal": "Add Goal",
+        "cancel": "Cancel",
+        "editStepsGoal": "Edit Steps Goal",
+        "editWeeklyGoal": "Edit Weekly Goal",
+        "long": "Long",
+        "save": "Save",
+        "saveSteps": "Save Steps",
+        "saving": "Saving",
+        "stepsGoal": "Steps Goal",
+        "title": "Title",
+        "totalKm": "Total Km"
+      }
+    },
+    "insights": {
+      "alerts": {
+        "dismiss": "Descartar alerta"
+      },
+      "calendar": {
+        "edit": "Edit",
+        "key": "Key",
+        "keySession": "Key Session",
+        "nextMonth": "Next Month",
+        "noData": "No Data",
+        "prevMonth": "Prev Month",
+        "strengthDay": "Strength Day",
+        "strengthFlag": "Strength Flag"
+      },
+      "comparison": {
+        "delta": "Delta",
+        "distance": "Distance",
+        "execution": "Execution",
+        "hr": "Hr",
+        "latest": "Latest",
+        "minPerKm": "Min Per Km",
+        "pace": "Pace",
+        "plan": "Plan",
+        "real": "Real"
+      },
+      "compliance": {
+        "actual": "Real",
+        "currentWeek": "Semana actual: {actual} / {planned} km ({pct}% de cumplimiento)",
+        "planned": "Planeado",
+        "title": "Kilometraje semanal",
+        "weekShort": "S{n}"
+      },
+      "countdown": {
+        "avg4w": "Avg4w",
+        "days": "{n} días",
+        "for": "For",
+        "kmPerWeek": "Km Per Week",
+        "longRunMax": "Long Run Max",
+        "nextRace": "Próxima carrera: {plan}",
+        "phase": "Phase",
+        "racesLeft": "Races Left",
+        "racesProgress": "Races Progress",
+        "vo2max": "Vo2max",
+        "weekOf": "Week Of"
+      },
+      "error": "Error",
+      "history": {
+        "empty": "Empty",
+        "exercises": "Exercises",
+        "loading": "Loading",
+        "manual": "Manual",
+        "wearable": "Wearable"
+      },
+      "log": {
+        "date": "Date",
+        "grandTotal": "Grand Total",
+        "loading": "Loading",
+        "plan": "Plan",
+        "run": "Run",
+        "total": "Total",
+        "type": "Type",
+        "walk": "Walk",
+        "weekNo": "Week No"
+      },
+      "planCalendar": {
+        "kmReal": "Km Real",
+        "types": {
+          "race": "Carrera",
+          "rest": "Descanso",
+          "run": "Correr",
+          "strength": "Fuerza",
+          "easy_run": "Suave",
+          "intervals": "Intervalos",
+          "long_run": "Tirada larga",
+          "recovery_run": "Recuperación",
+          "tempo": "Tempo"
+        },
+        "weekShort": "Week Short"
+      },
+      "readiness": {
+        "consistency": "Consistency",
+        "daysToRace": "{n} días para la carrera",
+        "health": "Health",
+        "longRunMax": "Long Run Max",
+        "score": "Score",
+        "title": "Preparación para carrera",
+        "volume": "Volume"
+      },
+      "readinessVolume": {
+        "hrv": "Hrv",
+        "hrvSleepAxis": "Hrv Sleep Axis",
+        "noData": "No Data",
+        "sleep": "Sleep",
+        "title": "Title",
+        "today": "Today",
+        "volumeKm": "Volume Km",
+        "volumeLabel": "Volume Label",
+        "week": "Week",
+        "weekShort": "Week Short"
+      },
+      "rings": {
+        "consistency": "Consistencia",
+        "longRun": "Tirada larga",
+        "title": "Progreso",
+        "volume": "Volumen"
+      },
+      "scorecard": {
+        "progress": "Progress",
+        "week": "Week"
+      },
+      "timeline": {
+        "focus": {
+          "base": "Base",
+          "build": "Construcción",
+          "peak": "Pico",
+          "race": "Carrera",
+          "rest": "Recuperación",
+          "taper": "Afinamiento"
+        },
+        "kmTotal": "Km Total",
+        "title": "Title",
+        "weekShort": "Week Short"
+      },
+      "today": {
+        "keySession": "Key Session",
+        "label": "HOY",
+        "readiness": {
+          "green": "Listo",
+          "red": "Descanso",
+          "yellow": "Precaución"
+        },
+        "restDay": "Rest Day",
+        "todayStrength": "Today Strength"
+      },
+      "views": {
+        "calendar": "Calendario",
+        "grid": "Cuadrícula",
+        "log": "Registro"
+      },
+      "volume": {
+        "actual": "Actual",
+        "peak": "Peak",
+        "plan": "Plan",
+        "planPhase": "Plan Phase",
+        "restSuffix": "Rest Suffix",
+        "title": "Title",
+        "today": "Today",
+        "weekShort": "Week Short"
+      },
+      "sessions": {
+        "z2": "Z2",
+        "hiit": "HIIT",
+        "long": "Larga",
+        "strength": "Fuerza",
+        "rest": "Descanso",
+        "easy": "Suave",
+        "tempo": "Tempo",
+        "recovery": "Recuperación"
+      },
+      "phases": {
+        "base": "Base",
+        "build": "Construcción",
+        "peak": "Pico",
+        "taper": "Afinamiento",
+        "race": "Carrera",
+        "rest": "Descanso"
+      },
+      "days": {
+        "mon": "Lun",
+        "tue": "Mar",
+        "wed": "Mié",
+        "thu": "Jue",
+        "fri": "Vie",
+        "sat": "Sáb",
+        "sun": "Dom"
+      }
     }
   }
 }

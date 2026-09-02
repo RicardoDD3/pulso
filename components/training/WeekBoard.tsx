@@ -402,28 +402,43 @@ export default function WeekBoard({
     );
   };
 
-  // El original tenía POST /rebalance; aquí no existe ese route, así que cada
-  // patch se aplica como una edición de día (mismo efecto sobre plan_json).
+  // POST /rebalance applies every patch under a SINGLE version snapshot.
   const handleRebalanceApply = async (patches: RebalancePatch[]) => {
-    let lastPlan: GeneratedPlan | null = null;
-    for (const p of patches) {
-      const res = await fetch(`/api/training/plans/${plan.id}/day`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
+    const res = await fetch(`/api/training/plans/${plan.id}/rebalance`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        patches: patches.map((p) => ({
           weekIndex: p.weekIndex,
           dayIndex: p.dayIndex,
-          updates: { distanceKm: p.newKm },
-        }),
-      });
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data.error?.message || t("board.rebalanceError"));
-      }
-      const data = await res.json();
-      lastPlan = data.plan_json;
+          distanceKm: p.newKm,
+        })),
+      }),
+    });
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}));
+      throw new Error(data.error?.message || t("board.rebalanceError"));
     }
-    if (lastPlan) applyServerPlan(lastPlan);
+    const data = await res.json();
+    if (data.planJson) applyServerPlan(data.planJson);
+  };
+
+  // Dismiss persists via /rebalance {dismiss}; falls back to client state.
+  const handleRebalanceDismiss = async (weekIdx: number, key: string) => {
+    setLocalDismissedKey(key);
+    try {
+      const res = await fetch(`/api/training/plans/${plan.id}/rebalance`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ dismiss: { weekIndex: weekIdx, key } }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (data.planJson) applyServerPlan(data.planJson);
+      }
+    } catch {
+      /* client-side dismissal already applied */
+    }
   };
 
   /* ---------------- Estado de interacción (drag / tap) ---------------- */
@@ -709,7 +724,7 @@ export default function WeekBoard({
             setForceRebalance(false);
           }}
           onDismiss={async () => {
-            setLocalDismissedKey(rebalanceKey);
+            if (rebalanceKey) await handleRebalanceDismiss(weekIndex, rebalanceKey);
             setForceRebalance(false);
           }}
         />

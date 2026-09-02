@@ -13,6 +13,7 @@ const eslintConfig = defineConfig([
       "react-hooks/use-memo": "warn",
       "react-hooks/purity": "warn",
       "react-hooks/refs": "warn",
+      "react-hooks/preserve-manual-memoization": "warn",
     },
   },
   // Override default ignores of eslint-config-next.
@@ -23,6 +24,7 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
     "jest.config.js",
+    "jest.db.config.js",
     "lib/db/migrations/**",
   ]),
 ]);
