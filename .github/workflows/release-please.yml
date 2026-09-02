@@ -17,7 +17,7 @@ jobs:
         with:
           release-type: node
       # Publish multi-arch images to GHCR on each release.
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         if: ${{ steps.release.outputs.release_created }}
       - uses: docker/setup-qemu-action@v3
         if: ${{ steps.release.outputs.release_created }}
