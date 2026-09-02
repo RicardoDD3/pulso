@@ -1,0 +1,18 @@
+# gitleaks config — extends the default ruleset with an allowlist for the
+# obviously-fake AUTH_SECRET fixtures used in unit tests (repeated hex, never
+# a real secret). Real .env values are gitignored and never committed.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Test fixtures — dummy AUTH_SECRET values, not real secrets"
+regexes = [
+  '''0123456789abcdef(0123456789abcdef)?''',
+  '''ci-only-secret-not-production''',
+  '''e2e-only-secret-not-production''',
+  '''db-tests-secret''',
+]
+paths = [
+  '''__tests__/.*\.test\.ts''',
+  '''\.github/workflows/.*\.yml''',
+]

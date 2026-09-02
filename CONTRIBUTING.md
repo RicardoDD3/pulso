@@ -6,7 +6,7 @@ Thanks for helping! Goal: a contributor goes from clone to running app in
 ## Dev setup
 
 ```bash
-git clone https://github.com/your-org/pulso && cd pulso
+git clone https://github.com/RicardoDD3/pulso && cd pulso
 npm install
 cp .env.example .env                    # set AUTH_SECRET
 docker compose up -d postgres redis     # only the data services

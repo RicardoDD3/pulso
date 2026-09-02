@@ -13,7 +13,7 @@ sending health data to a third-party SaaS.
 ## Quick Start
 
 ```bash
-git clone https://github.com/your-org/pulso && cd pulso
+git clone https://github.com/RicardoDD3/pulso && cd pulso
 cp .env.example .env          # set AUTH_SECRET (openssl rand -hex 32)
 docker compose --profile demo up -d
 ```

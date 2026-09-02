@@ -35,13 +35,13 @@ Stack: Next.js + Postgres + Redis + BullMQ, AI SDK with pluggable providers.
 
 Not a medical device; AI extraction is always marked as verify-against-PDF.
 
-Repo: https://github.com/your-org/pulso
+Repo: https://github.com/RicardoDD3/pulso
 
 ---
 
 **Checklist before posting**
 
-- [ ] Replace `your-org` everywhere (README, compose, docs)
+- [ ] Replace `RicardoDD3` everywhere (README, compose, docs)
 - [ ] Dashboard GIF recorded from the demo profile
 - [ ] Provider screenshots in docs/providers.md
 - [ ] `v1.0.0` tag + GHCR images published

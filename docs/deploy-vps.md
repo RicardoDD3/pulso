@@ -6,7 +6,7 @@ recommended), and 10 minutes.
 ## 1. Get the code and configure
 
 ```bash
-git clone https://github.com/your-org/pulso && cd pulso
+git clone https://github.com/RicardoDD3/pulso && cd pulso
 cp .env.example .env
 ```
 
