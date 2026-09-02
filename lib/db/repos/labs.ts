@@ -73,6 +73,13 @@ export async function createProcessingSession(viewer: Viewer, sourceFilePath: st
   return session;
 }
 
+export async function markSessionProcessing(userId: string, sessionId: string) {
+  await getDb()
+    .update(labSessions)
+    .set({ status: "processing", error: null })
+    .where(and(eq(labSessions.id, sessionId), eq(labSessions.userId, userId)));
+}
+
 export async function markSessionFailed(userId: string, sessionId: string, error: string) {
   await getDb()
     .update(labSessions)

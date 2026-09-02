@@ -42,3 +42,4 @@ next-env.d.ts
 node_modules.nosync
 test-results/
 playwright-report/
+data/

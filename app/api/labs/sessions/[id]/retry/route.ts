@@ -17,6 +17,7 @@ export const POST = withApi<Ctx>(async (_req, ctx) => {
   const detail = await labsRepo.getSession(viewer, sessionId);
   if (!detail?.session.sourceFilePath) return apiError(404, "not_found");
   const profile = await profilesRepo.getProfile(viewer);
+  await labsRepo.markSessionProcessing(viewer.userId, sessionId);
   await getQueue("labs").add("extract", {
     userId: viewer.userId,
     sessionId,

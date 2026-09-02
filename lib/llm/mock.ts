@@ -24,25 +24,35 @@ export function mockChatText(feature: LlmFeature): string {
 export function mockJsonValue(feature: LlmFeature): unknown {
   switch (feature) {
     case "labs_extraction":
+      // Matches lib/labs/schema.ts (the compact extraction schema).
       return {
-        session: {
-          sample_date: "2026-01-15",
-          lab_name: "Mock Lab",
-          patient_name: null,
-          patient_dob: null,
-          patient_sex: null,
-          patient_age: null,
-          doctor_name: null,
-          lab_location: null,
-        },
+        patient: { name: null, dob: null, sex: null, age: null },
+        lab: { name: "Mock Lab", location: "Mock City", doctor: null },
+        sample_date: "2026-01-15",
         results: [
           {
-            category: "Química sanguínea",
-            test_name: "Glucosa",
-            value: 92,
+            cat: "GM",
+            name: "Glucosa",
+            key: "glucose",
+            val: 92,
+            txt: null,
             unit: "mg/dL",
-            reference_range: "70 - 100",
-            is_flagged: false,
+            rmin: 70,
+            rmax: 100,
+            rtxt: null,
+            flag: false,
+          },
+          {
+            cat: "TIR",
+            name: "TSH",
+            key: "tsh",
+            val: 2.4,
+            txt: null,
+            unit: "µIU/mL",
+            rmin: 0.4,
+            rmax: 4.5,
+            rtxt: null,
+            flag: false,
           },
         ],
       };
