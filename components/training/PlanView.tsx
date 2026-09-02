@@ -3,8 +3,11 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { WeekCard } from "./WeekCard";
+import { WeekBoard } from "./WeekBoard";
 import { StepsBox } from "./StepsBox";
 import { PlannerChat } from "./PlannerChat";
+import InsightsPanel from "./insights/InsightsPanel";
+import { isEditablePlan } from "@/lib/training/plan-service";
 import {
   localISODate,
   weekTargetKm,
@@ -233,14 +236,26 @@ export function PlanView({ planId, readOnly = false, chatEnabled = false, onPlan
                 ›
               </button>
             </div>
-            <WeekCard
-              rows={byWeek.get(activeWeek) ?? []}
-              targetKm={weekTargetKm(plan.planJson, activeWeek)}
-            />
+            {isEditablePlan(plan.planJson) ? (
+              <WeekBoard
+                plan={plan}
+                weekNumber={activeWeek}
+                workouts={detail.workouts}
+                readOnly={readOnly}
+                onPlanChanged={load}
+              />
+            ) : (
+              <WeekCard
+                rows={byWeek.get(activeWeek) ?? []}
+                targetKm={weekTargetKm(plan.planJson, activeWeek)}
+              />
+            )}
           </>
         ) : null}
 
         <StepsBox />
+
+        <InsightsPanel planId={planId} readOnly={readOnly} />
       </div>
 
       {chatOpen && !readOnly ? (
