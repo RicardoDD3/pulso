@@ -17,7 +17,7 @@ import type {
   Phase,
 } from "@/lib/training/plan-generator-types";
 import { PHASE_COLORS } from "@/lib/training/plan-static-data";
-import { isEditablePlan } from "@/lib/training/plan-service";
+import { isEditablePlan } from "@/lib/training/plan-generator-types";
 import { getTodayISO, type TrainingActivity } from "@/lib/training/plan-insights";
 import {
   proposeRebalance,

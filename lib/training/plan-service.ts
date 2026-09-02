@@ -29,15 +29,12 @@ import {
   type ExerciseType,
 } from "@/lib/training/exercise-catalog";
 import { PlanPatchesSchema, type ValidatedPlannerAction } from "@/lib/training/plan-schemas";
-import type { GeneratedPlan } from "@/lib/training/plan-generator-types";
+import { type GeneratedPlan, isEditablePlan } from "@/lib/training/plan-generator-types";
 
-/** GeneratedPlan (weeks[].days[]) — the only format the edit paths support. */
-export function isEditablePlan(planJson: unknown): planJson is GeneratedPlan {
-  const plan = planJson as GeneratedPlan | null;
-  return (
-    !!plan && Array.isArray(plan.weeks) && plan.weeks.every((w) => Array.isArray(w?.days))
-  );
-}
+// isEditablePlan moved to the client-safe types module (client components need
+// it without pulling in this file's server-only deps). Re-exported for the
+// server routes that import it from here.
+export { isEditablePlan };
 
 export type ModifyResult =
   | { ok: true; summary: string; planJson: GeneratedPlan }

@@ -185,3 +185,13 @@ export const SAFETY_CAPS = {
   maxWeekendTotalKm: 95,
   maxB2bKm: 38,
 } as const;
+
+/** GeneratedPlan (weeks[].days[]) — the only format the edit paths support.
+ *  Pure type guard; lives here (a types-only, client-safe module) so client
+ *  components can import it without dragging in server-only code. */
+export function isEditablePlan(planJson: unknown): planJson is GeneratedPlan {
+  const plan = planJson as GeneratedPlan | null;
+  return (
+    !!plan && Array.isArray(plan.weeks) && plan.weeks.every((w) => Array.isArray(w?.days))
+  );
+}

@@ -7,7 +7,7 @@ import WeekBoard from "./WeekBoard";
 import { StepsBox } from "./StepsBox";
 import { PlannerChat } from "./PlannerChat";
 import InsightsPanel from "./insights/InsightsPanel";
-import { isEditablePlan } from "@/lib/training/plan-service";
+import { isEditablePlan } from "@/lib/training/plan-generator-types";
 import {
   localISODate,
   weekTargetKm,
