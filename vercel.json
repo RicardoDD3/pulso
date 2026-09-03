@@ -1,0 +1,5 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "DATABASE_URL=\"$DATABASE_URL_UNPOOLED\" npx drizzle-kit migrate && sh -c 'if [ \"$SEED_DEMO\" = \"true\" ]; then npx tsx scripts/seed-demo.ts; fi' && next build",
+  "framework": "nextjs"
+}

@@ -43,3 +43,4 @@ node_modules.nosync
 test-results/
 playwright-report/
 data/
+.env.vercel
