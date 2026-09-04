@@ -102,7 +102,20 @@ export function WearablesSettings() {
   return (
     <div className="max-w-2xl space-y-6">
       <h1 className="text-2xl font-bold">{t("title")}</h1>
-      {!enabled ? <p className="text-sm text-amber-400">{t("notConfigured")}</p> : null}
+      {!enabled ? (
+        <div className="space-y-2 rounded-xl border border-amber-800/60 bg-amber-950/30 p-4 text-sm">
+          <p className="font-semibold text-amber-300">{t("demoTitle")}</p>
+          <p className="text-amber-200/80">{t("demoBody")}</p>
+          <a
+            href="https://github.com/RicardoDD3/pulso/blob/main/docs/providers.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block text-amber-300 underline underline-offset-2 hover:text-amber-100"
+          >
+            {t("demoLink")}
+          </a>
+        </div>
+      ) : null}
       {staleConnection ? (
         <p className="rounded-lg border border-amber-700 bg-amber-950/40 p-3 text-sm text-amber-300">
           {t("staleWarning", { provider: staleConnection.provider })}

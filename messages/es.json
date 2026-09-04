@@ -94,7 +94,10 @@
     "lastSync": "Última sync",
     "recentSyncs": "Syncs recientes",
     "staleWarning": "{provider} muestra conexión activa pero sin datos por más de 48h. Prueba \"Sincronizar ahora\" o reconecta.",
-    "confirmDeleteData": "Esto borra TODOS los datos de este proveedor (aquí y en Open Wearables). ¿Continuar?"
+    "confirmDeleteData": "Esto borra TODOS los datos de este proveedor (aquí y en Open Wearables). ¿Continuar?",
+    "demoTitle": "Esta es una instancia demo — la sincronización de wearables está apagada",
+    "demoBody": "Los datos que ves son sintéticos. Conectar un Garmin, Oura, Whoop, etc. real requiere desplegar Open Wearables (el servicio de ingesta) y configurar tus credenciales de developer del proveedor (OW_API_URL / OW_API_KEY). Los botones de conectar quedan deshabilitados hasta entonces.",
+    "demoLink": "Cómo conectar un wearable real →"
   },
   "coach": {
     "title": "Coach",
