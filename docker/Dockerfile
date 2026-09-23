@@ -1,5 +1,5 @@
 # Pulso web + worker image (Next.js standalone output, spec doc 01).
-FROM node:24-alpine AS base
+FROM node:25-alpine AS base
 WORKDIR /app
 
 FROM base AS deps
